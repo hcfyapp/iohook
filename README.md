@@ -5,3 +5,28 @@ Just install it and it should work for you:
 ```text
 npm install @hcfy/iohook
 ```
+
+Use `arm64` in `package.json` runtime version to download arm64 prebuild.
+
+[https://wilix-team.github.io/iohook/usage.html#electron](https://wilix-team.github.io/iohook/usage.html#electron)
+
+For example, for Electron v17 and Node.js v16:
+
+```js
+"iohook": {
+  "targets": [
+    "node-93",
+    "electron-101"
+  ],
+  "platforms": [
+    "win32",
+    "darwin",
+    "linux"
+  ],
+  "arches": [
+    "x64",
+    "ia32",
+    "arm64"
+  ]
+}
+```
