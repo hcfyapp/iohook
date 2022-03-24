@@ -1,5 +1,5 @@
 {
-  "name": "iohook",
+  "name": "@hcfy/iohook",
   "version": "0.9.3",
   "description": "Node.js global keyboard and mouse hook",
   "author": "Aloyan Dmitry",
