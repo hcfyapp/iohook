@@ -10,23 +10,25 @@ Use `arm64` in `package.json` runtime version to download arm64 prebuild.
 
 [https://wilix-team.github.io/iohook/usage.html#electron](https://wilix-team.github.io/iohook/usage.html#electron)
 
-For example, for Electron v17 and Node.js v16:
+For example, for Electron v18 and Node.js v16:
 
-```js
-"iohook": {
-  "targets": [
-    "node-93",
-    "electron-101"
-  ],
-  "platforms": [
-    "win32",
-    "darwin",
-    "linux"
-  ],
-  "arches": [
-    "x64",
-    "ia32",
-    "arm64"
-  ]
+```json
+{
+  "iohook": {
+    "targets": [
+      "node-93",
+      "electron-103"
+    ],
+    "platforms": [
+      "win32",
+      "darwin",
+      "linux"
+    ],
+    "arches": [
+      "x64",
+      "ia32",
+      "arm64"
+    ]
+  }
 }
 ```
