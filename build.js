@@ -153,14 +153,17 @@ function build(runtime, version, abi) {
         args.push('--v8_enable_31bit_smis_on_64bit_arch=1');
       }
     }
-    if (process.platform !== 'win32') {
-      if (parseInt(abi) >= 64) {
-        args.push('--build_v8_with_gn=false');
-      }
-      if (parseInt(abi) >= 67) {
-        args.push('--enable_lto=false');
-      }
+    // 在 GitHub Actions 里 win32 build 的时候会报跟 build_v8_with_gn 有关的错误，
+    // 所以在 win32 也加入 --build_v8_with_gn=false
+    // https://github.com/nodejs/node-gyp/issues/1457
+    // if (process.platform !== 'win32') {
+    if (parseInt(abi) >= 64) {
+      args.push('--build_v8_with_gn=false');
     }
+    if (parseInt(abi) >= 67) {
+      args.push('--enable_lto=false');
+    }
+    // }
 
     console.log('Building iohook for ' + runtime + ' v' + version + '>>>>');
     if (process.platform === 'win32') {
