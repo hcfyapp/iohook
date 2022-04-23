@@ -138,6 +138,7 @@ function build(runtime, version, abi) {
       'rebuild',
       '--target=' + version,
       '--arch=' + arch,
+      '--openssl_fips=X',
     ];
 
     if (/^electron/i.test(runtime)) {

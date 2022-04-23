@@ -27,13 +27,13 @@ jobs:
       - name: Setup Linux Dependencies
         if: startsWith(matrix.os, 'ubuntu')
         run: |
-          sudo apt-get install -y software-properties-common libx11-dev libxtst-dev libxt-dev libx11-xcb-dev libxkbcommon-dev libxkbcommon-x11-dev xorg-dev libxcb-xkb-dev libxkbfile-dev libxinerama-dev
+          sudo apt-get update && sudo apt-get install -y software-properties-common libx11-dev libxtst-dev libxt-dev libx11-xcb-dev libxkbcommon-dev libxkbcommon-x11-dev xorg-dev libxcb-xkb-dev libxkbfile-dev libxinerama-dev
 
       - name: Install Packages
         run: npm i --ignore-scripts
 
       - name: Build
-        run: npm run build -- --all --msvs_version=2019
+        run: npm run build -- --all --msvs_version=2022
         env:
           ARCH: ${{ matrix.arch }}
 
